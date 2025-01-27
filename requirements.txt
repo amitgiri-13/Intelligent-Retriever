@@ -1,0 +1,6 @@
+transformers
+sentence-transformers
+faiss-cpu
+PyPDF2
+PyYAML
+numpy

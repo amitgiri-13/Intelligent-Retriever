@@ -1,0 +1,2 @@
+retriever_config: config/retriever_config.yaml
+generator_config: config/generator_config.yaml

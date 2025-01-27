@@ -1,0 +1,2 @@
+generator_model: gpt2
+max_tokens: 100

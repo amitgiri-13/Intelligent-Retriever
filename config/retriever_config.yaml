@@ -1,0 +1,2 @@
+retriever_model: "paraphrase-MiniLM-L6-v2"
+dimension: 384
