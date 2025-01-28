@@ -36,3 +36,4 @@ class VectorStore:
         distances, indices = self.index.search(np.array([query_vector]), top_k)
         results = [self.data[i] for i in indices[0]]
         return results 
+    

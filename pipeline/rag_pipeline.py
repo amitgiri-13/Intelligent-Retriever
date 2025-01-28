@@ -18,3 +18,4 @@ class RAGPipeline:
         documents = self.retriever.search(query, top_k)
         prompt = create_prompt(query, documents)
         return self.generator.generate(prompt)
+    

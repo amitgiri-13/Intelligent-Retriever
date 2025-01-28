@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
-from .vector_store import VectorStore
-from .preprocessing import  read_pdf, preprocess_text
+from vector_store import VectorStore
+from preprocessing import  read_pdf, preprocess_text
 
 class Retriever:
     def __init__(self, model_name="paraphrase-MiniLM-L6-v2",dim=384):
@@ -17,6 +17,16 @@ class Retriever:
     def split_into_chunks(self, text: str, chunk_size=200) ->list[str]:
         return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
     
-    def search(self, query, top_k=5):
+    def search(self, query, top_k=4):
         query_vector = self.model.encode([query])[0]
         return self.vector_store.search(query_vector, top_k)
+    
+if __name__ == "__main__":
+    file = "/home/amit/Repositories/PythonStuffs/ArtificialIntelligence/RAGImplementation/data/corpus/raj_meera.pdf"
+    retriever = Retriever()
+    retriever.index_documents(file)
+    
+    query = "why could not raj response to meera?"
+    result = retriever.search(query=query)
+    print(result)
+    
