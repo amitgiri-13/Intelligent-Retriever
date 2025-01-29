@@ -8,5 +8,6 @@ def create_prompt(query: str, documents: str):
     Returns:
         _type_: Returns actual prompt to feed to llm.
     """
-    context = "\n".join(documents)
-    return f"Context:\n{context}\nQuery:\n{query}\nAnswer:"
+    context = f"\nBased on the context answer query like wise human\n"
+    context = context.join(documents)
+    return f"Context:\n{documents}\nQuery:\n{query}\nAnswer:"

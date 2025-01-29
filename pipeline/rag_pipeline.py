@@ -9,11 +9,11 @@ from generator.generator import Generator
 from generator.prompt_templates import create_prompt
 
 class RAGPipeline:
-    def __init__(self, retriever_model, generator_model):
+    def __init__(self, retriever_model=None, generator_model=None):
         self.retriever = Retriever(retriever_model)
         self.generator = Generator(generator_model)
 
-    def run(self, query, file_path, top_k=5):
+    def run(self, query, file_path, top_k=10):
         self.retriever.index_documents(file_path)
         documents = self.retriever.search(query, top_k)
         prompt = create_prompt(query, documents)

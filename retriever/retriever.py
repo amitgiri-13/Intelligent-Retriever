@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
-from vector_store import VectorStore
-from preprocessing import  read_pdf, preprocess_text
+from .vector_store import VectorStore
+from .preprocessing import  read_pdf, preprocess_text
 
 class Retriever:
     def __init__(self, model_name="paraphrase-MiniLM-L6-v2",dim=384):
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     retriever = Retriever()
     retriever.index_documents(file)
     
-    query = "why could not raj response to meera?"
+    query = "why could not raj confess to meera?"
     result = retriever.search(query=query)
     print(result)
     

@@ -1,20 +1,25 @@
-from transformers import pipeline
+import os
+from dotenv import load_dotenv
 import google.generativeai as genai
 
-api_key = "AIzaSyAtNJrVwP_C8hj2XJ43x8diXWlYStOUSTY"
+load_dotenv()
+api_key = os.getenv("API_KEY")
+if not api_key:
+    raise ValueError("API_KEY is missing! Set it in the .env file.")
 
 class Generator:
-    def __init__(self, model_name="gpt2"):
-        self.generator = pipeline("text-generation", model=model_name)
+    def __init__(self, model_name="gemini-1.5-flash"):
+        genai.configure(api_key=api_key)
+        self.model = genai.GenerativeModel(model_name)
 
-    def generate(self, prompt, max_tokens=50):
-        return self.generator(prompt, truncation=True, max_length=500, num_return_sequences=1)
-    
+    def generate(self, prompt):
+        response = self.model.generate_content(prompt)
+        return response.text
+
 if __name__ == "__main__":
-    prompt = "Write me one line about cat command."
-    
+    prompt = "what is cat command?"
+    generator = Generator()
+    print(generator.generate(prompt))
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    response = model.generate_content(prompt)
-    print(response.text)
+
+    
