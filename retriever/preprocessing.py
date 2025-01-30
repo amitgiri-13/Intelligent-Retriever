@@ -4,10 +4,10 @@ import re
 def read_pdf(file_path: str) -> str:
     """Read the text from pdf file.
     Args:
-        file_path (str): path of pdf file we want to read from.
+        file_path (str): Path of pdf file we want to read from.
 
     Returns:
-        str:  text contents of the pdf file.
+        str:  Text contents of the pdf file.
     """
     reader = PdfReader(file_path)
     text = ""
@@ -16,19 +16,18 @@ def read_pdf(file_path: str) -> str:
     return text
 
 def preprocess_text(text: str) -> str:
-    """Pre process the given text string.
-
+    """Pre process the given text string. Removes the multiple spaces, strip and convert to lowercase.
     Args:
         text (str): Raw text contents.
 
     Returns:
-        str: _ Returns the text contents replacing multiple sapces with single space,
-        and converting all letters to lower case.
+        str: Preprocessed text contents.
     """
     text = re.sub(r"\s+"," ", text) # Replace multiple spaces with single space
     text = text.strip().lower()
     return text
 
+# Testing
 if __name__ == "__main__":
     pdf_file = "/home/amit/Repositories/PythonStuffs/ArtificialIntelligence/RAGImplementation/data/corpus/raj_meera.pdf"
     text = read_pdf(pdf_file)
