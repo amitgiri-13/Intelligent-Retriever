@@ -5,7 +5,7 @@ from generator.prompt_templates import create_prompt
 class RAGPipeline:
     """Combines the retriever and generator to work together.
     """
-    def __init__(self, retriever_model=None, generator_model=None):
+    def __init__(self, retriever_model="sentence-transformers/all-MiniLM-L6-v2", generator_model="gemini-1.5-flash"):
         """Initialize the retriever and generator.
 
         Args:
