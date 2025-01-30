@@ -1,12 +1,12 @@
 def create_prompt(query: str, documents: str):
-    """Prompt template
+    """Prompt template.
 
     Args:
         query (str): User's prompt.
         documents (str): Data from RAG.
 
     Returns:
-        _type_: Returns actual prompt to feed to llm.
+        _type_: Custom prompt to actually feed to llm.
     """
     context = f"\nBased on the context answer query like wise human\n"
     context = context.join(documents)

@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
-from vector_store import VectorStore
-from preprocessing import  read_pdf, preprocess_text
+from .vector_store import VectorStore
+from .preprocessing import  read_pdf, preprocess_text
 
 class Retriever:
     """ Index the document and help to retrieve the content that best matches the query.
