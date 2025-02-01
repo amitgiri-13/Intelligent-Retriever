@@ -51,13 +51,13 @@
 12. Dependencies (requirements.txt)
     - All the dependencies required for running the project, such as libraries for PDF parsing, text processing, machine learning, and model handling, are listed here.
 
-## Data Flow Overview:
+# Data Flow Overview:
 
 1. User Query → Interface → Pipeline (rag_pipeline.py) → Retriever (retriever.py) → Document Retrieval → Embedding Search
 2. Retriever → Top-N Relevant Chunks → Generator (generator.py) → Answer Generation
 3. Generated Answer → Interface → GUI/Output Display
 
-## Execution Workflow:
+# Execution Workflow:
 
 1. Start: User enters a query through GUI.
 2. Document Retrieval: Preprocessed documents are searched for relevant information based on the query.
