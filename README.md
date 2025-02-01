@@ -2,15 +2,13 @@
 
 This project is a great starting point for anyone looking to understand the powerful Retrieval-Augmented Generation (RAG) architecture. It uses AI to retrieve relevant content from PDF documents and generate insightful answers with Google's Gemini model. It's a simple yet effective way to explore how RAG works. If you're interested in diving into the world of AI, give this project a try and start exploring the potential of RAG!
 
-## Overview
+## Preview
 ![image](https://github.com/user-attachments/assets/67fbbc3b-0a3d-4129-9bb6-de3a545a2a9a)
 
-### Retrieval Augmented Generation (RAG) Architecture
+## Retrieval Augmented Generation (RAG) Architecture
+  RAG (Retrieval-Augmented Generation) improves AI responses by retrieving relevant information from stored documents. A retriever searches a vector store, where documents are stored as numerical vectors using an embedding model. The retrieved context   is combined with the user’s query to form a prompt for the LLM (Large Language Model), which generates a response. This process enhances accuracy, making user interactions more informative and reliable.
+
 ![rag-architecture drawio](https://github.com/user-attachments/assets/cfa64c66-7d08-4a65-a0fe-b8e46d2d27d9)
-
-## Workflow
-![rag_implementation_workflow](https://github.com/user-attachments/assets/019f74b4-bc87-43fb-8f03-d45a2dbce786)
-
 
 ## Features
 
@@ -63,6 +61,9 @@ streamlit run app.py
 - The Gemini model generates a response based on the retrieved content.
 
 - The result is displayed on the UI.
+  
+### Workflow
+![rag_implementation_workflow](https://github.com/user-attachments/assets/019f74b4-bc87-43fb-8f03-d45a2dbce786)
 
 ## Project Structure
 ```bash
