@@ -5,6 +5,9 @@ This project is a great starting point for anyone looking to understand the powe
 ## Overview
 ![image](https://github.com/user-attachments/assets/67fbbc3b-0a3d-4129-9bb6-de3a545a2a9a)
 
+### Retrieval Augmented Generation (RAG) Architecture
+![rag-architecture drawio](https://github.com/user-attachments/assets/cfa64c66-7d08-4a65-a0fe-b8e46d2d27d9)
+
 ## Workflow
 ![rag_implementation_workflow](https://github.com/user-attachments/assets/019f74b4-bc87-43fb-8f03-d45a2dbce786)
 
