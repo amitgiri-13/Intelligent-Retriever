@@ -4,16 +4,17 @@ import logging
 import yaml
 from pipeline.rag_pipeline import RAGPipeline
 
-# Configure logging
+# Configure root logger to capture all logs from all modules
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler("rag_pipeline.log"),
-        logging.StreamHandler(sys.stdout),
+        logging.FileHandler("rag_pipeline.log"),  # Log to file
+        logging.StreamHandler(sys.stdout),  # Log to console
     ],
 )
-logger = logging.getLogger(__name__)
+
+logger = logging.getLogger()  # Use root logger
 
 # Function to load configuration files
 def load_config(config_path):
