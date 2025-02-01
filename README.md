@@ -1,40 +1,131 @@
-# RAGImplementation
+# Intelligent Retriever - AI-Powered Document Search
 
-## Directory Structure 
+This project is a great starting point for anyone looking to understand the powerful Retrieval-Augmented Generation (RAG) architecture. It uses AI to retrieve relevant content from PDF documents and generate insightful answers with Google's Gemini model. It's a simple yet effective way to explore how RAG works. If you're interested in diving into the world of AI, give this project a try and start exploring the potential of RAG!
+
+## Overview
+![image](https://github.com/user-attachments/assets/67fbbc3b-0a3d-4129-9bb6-de3a545a2a9a)
+
+## Workflow
+![rag_implementation_workflow](https://github.com/user-attachments/assets/019f74b4-bc87-43fb-8f03-d45a2dbce786)
+
+
+## Features
+
+- Retrieve relevant content from uploaded PDFs using a sentence-transformer model.
+
+- Generate answers using Google's gemini-1.5-flash model.
+
+- Interactive UI built with Streamlit for seamless user experience.
+
+- Supports PDF documents and allows users to ask questions about their contents.
+
+## Installation
+
+Follow these steps to set up and run the project on your local machine.
+
+1. Clone the Repository
 ```bash
-rag_project/
-├── retriever/
-│   ├── __init__.py
-│   ├── retriever.py            # Logic for retrieval (e.g., vector search, BM25, etc.)
-│   ├── vector_store.py         # Handles vector database (e.g., FAISS or Elasticsearch integration)
-│   └── preprocessing.py        # Text preprocessing for indexing and querying
-├── generator/
-│   ├── __init__.py
-│   ├── generator.py            # Logic for text generation (e.g., calling GPT or T5)
-│   └── prompt_templates.py     # Templates for prompts or input conditioning
-├── pipeline/
-│   ├── __init__.py
-│   ├── rag_pipeline.py         # Orchestrates retriever and generator
-│   └── utils.py                # Helper functions (e.g., for logging, metrics)
-├── data/
-│   ├── corpus/                 # Directory for raw text data or documents
-│   │   ├── docs.txt
-│   │   └── ...
-│   ├── embeddings/             # Directory to store embeddings (if applicable)
-│   └── processed/              # Preprocessed data (e.g., tokenized, chunked text)
-├── scripts/
-│   ├── index_data.py           # Script to index data into the retriever
-│   ├── query_pipeline.py       # Script to test the RAG pipeline
-│   └── train_generator.py      # Script to fine-tune or train the generator
-├── config/
-│   ├── retriever_config.yaml   # Configuration for retriever
-│   ├── generator_config.yaml   # Configuration for generator
-│   └── pipeline_config.yaml    # Configuration for pipeline
-├── tests/
-│   ├── test_retriever.py       # Unit tests for retriever
-│   ├── test_generator.py       # Unit tests for generator
-│   └── test_pipeline.py        # Unit tests for the pipeline
-├── requirements.txt            # Python dependencies
-├── README.md                   # Documentation for your project
-└── main.py                     # Entry point for running the RAG pipeline
+git clone https://github.com/your-username/Intelligent-Retriever.git
+cd Intelligent-Retriever
 ```
+
+2. Create a Virtual Environment (Recommended)
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+```
+3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+4. Set Up API Key
+
+- Create a .env file in the root directory and add your Google API key:
+
+- API_KEY=your_google_api_key_here. [Get Google AI Studio API Key (free tier works great for this project) ](https://aistudio.google.com/apikey)
+
+
+5. Run the Application
+```bash
+streamlit run app.py
+```
+## How It Works
+
+- Upload a PDF file via the Streamlit web interface.
+
+- Enter a query related to the document.
+
+- The system retrieves relevant content using a pre-trained sentence-transformer model.
+
+- The Gemini model generates a response based on the retrieved content.
+
+- The result is displayed on the UI.
+
+## Project Structure
+```bash
+IntelligentRetriever
+├── data
+│   ├── corpus
+│   │   ├── document1.pdf
+│   │   ├── document2.pdf
+│   ├── embeddings
+│   └── processed
+├── retriever
+│   ├── __init__.py
+│   ├── preprocessing.py
+│   ├── retriever.py
+│   └── vector_store.py
+├── generator
+│   ├── generator.py
+│   ├── __init__.py
+│   └── prompt_templates.py
+├── pipeline
+│   ├── __init__.py
+│   └── rag_pipeline.py
+├── config
+│   └── rag_config.yaml
+├── main.py
+├── gui.py
+├── scripts
+├── tests
+├── README.md
+├── requirements.txt
+├── LICENSE
+├── rag_pipeline.log
+```
+[ Visit For Detail Workflow ](https://github.com/amitgiri-13/RAGImplementation/blob/main/Workflow.md)
+
+## Configuration
+
+- Modify the config/rag_config.yaml file to adjust settings:
+```bash
+rag_model: "sentence-transformers/all-MiniLM-L6-v2"
+gen_model: "gemini-1.5-flash"
+file_path: "data/corpus/sample.pdf"
+top_k: 5
+```
+
+### Logging
+
+- All logs are saved in rag_pipeline.log for debugging and monitoring.
+
+## Future Improvements
+
+- Support for multiple file formats (e.g., TXT, DOCX)
+
+- Improve retrieval accuracy with better chunking techniques
+
+- Deploy as a web service for broader accessibility
+
+## Contribution
+Any contribution  to this project is appreciated! If you'd like to contribute, feel free to fork the repository, make changes, and submit a pull request. Please ensure that your code follows the project's coding standards and includes relevant tests or documentation updates.
+
+Thank you for your interest in contributing!
+
+## License
+
+This project is licensed under the MIT License.
+
+Contact
+
+For any issues or suggestions, feel free to reach out!
