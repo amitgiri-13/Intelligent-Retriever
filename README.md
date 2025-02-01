@@ -28,7 +28,7 @@ Follow these steps to set up and run the project on your local machine.
 
 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/Intelligent-Retriever.git
+git clone https://github.com/amitgiri-13/Intelligent-Retriever.git
 cd Intelligent-Retriever
 ```
 
