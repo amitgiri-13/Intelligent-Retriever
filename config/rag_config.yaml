@@ -1,4 +1,4 @@
 rag_model: "sentence-transformers/all-MiniLM-L6-v2"
 gen_model: "gemini-1.5-flash"
-file_path: "/home/amit/Repositories/PythonStuffs/ArtificialIntelligence/RAGImplementation/data/corpus/raj_meera.pdf"
+file_path: "/home/amit/Repositories/PythonStuffs/ArtificialIntelligence/RAGImplementation/data/corpus/pink_cat.pdf"
 top_k: 5

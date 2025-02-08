@@ -48,12 +48,17 @@ def main():
         logger.info(f"RAGPipeline initialized with models: {rag_model}, {gen_model}")
 
         query = input("Enter your prompt: ")
+        print()
+        print("Query")
+        print(query)
+        print()
         logger.info(f"User query: {query}")
 
         logger.info(f"Running RAGPipeline with file: {file_path} and top_k: {top_k}")
         response = rag_pipeline.run(query, file_path, top_k)
 
         logger.info(f"Pipeline response: {response}")
+        print()
         print("Response:", response)
 
     except Exception as e:

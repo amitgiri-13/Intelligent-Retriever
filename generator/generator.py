@@ -34,7 +34,7 @@ class Generator:
 
 # Testing
 if __name__ == "__main__":
-    prompt = "what is cat command?"
+    prompt = "who is tom?"
     generator = Generator()
     print(generator.generate(prompt))
 

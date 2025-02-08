@@ -29,5 +29,9 @@ class RAGPipeline:
         self.retriever.index_documents(file_path)
         documents = self.retriever.search(query, top_k)
         prompt = create_prompt(query, documents)
+        print()
+        print("Prompt:")
+        print(prompt)
+        print()
         return self.generator.generate(prompt)
     
