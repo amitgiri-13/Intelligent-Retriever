@@ -8,7 +8,13 @@ This project is a great starting point for anyone looking to understand the powe
 ## Retrieval Augmented Generation (RAG) Architecture
   RAG (Retrieval-Augmented Generation) improves AI responses by retrieving relevant information from stored documents. A retriever searches a vector store, where documents are stored as numerical vectors using an embedding model. The retrieved context   is combined with the user’s query to form a prompt for the LLM (Large Language Model), which generates a response. This process enhances accuracy, making user interactions more informative and reliable.
 
-![rag-architecture drawio](https://github.com/user-attachments/assets/cfa64c66-7d08-4a65-a0fe-b8e46d2d27d9)
+![image](https://github.com/user-attachments/assets/3689f957-f705-45d5-8965-0ada749cdd29)
+### Working of this Architecture
+    1. User Query: The user submits a question or prompt.
+    2. Context Retrieval: The system searches an external database (such as a vector store, document repository, or knowledge base) to find relevant documents based on the query.
+    3. Context Augmentation: The retrieved documents are directly added to the user’s original query without additional filtering or ranking.
+    4. Prompt Formation: The combined query and retrieved context are formatted into a single prompt.
+    5. LLM Response Generation: The LLM processes the prompt and generates a response based on both the query and the retrieved contex.
 
 ## Features
 
@@ -70,10 +76,8 @@ streamlit run app.py
 IntelligentRetriever
 ├── data
 │   ├── corpus
-│   │   ├── document1.pdf
-│   │   ├── document2.pdf
-│   ├── embeddings
-│   └── processed
+│       ├── document1.pdf
+│       └──document2.pdf
 ├── retriever
 │   ├── __init__.py
 │   ├── preprocessing.py
@@ -90,7 +94,6 @@ IntelligentRetriever
 │   └── rag_config.yaml
 ├── main.py
 ├── gui.py
-├── scripts
 ├── tests
 ├── README.md
 ├── requirements.txt
