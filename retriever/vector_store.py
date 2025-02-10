@@ -24,7 +24,7 @@ class VectorStore:
         self.index.add(np.array(vectors))
         self.data.extend(chunk)
 
-    def search(self, query_vector: list[list[float]], top_k=5) -> list:
+    def search(self, query_vector: list[list[float]], top_k=3) -> list:
         """Search for the top vectors in index that match with query vector.
 
         Args:

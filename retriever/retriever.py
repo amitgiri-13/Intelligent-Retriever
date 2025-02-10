@@ -39,7 +39,7 @@ class Retriever:
         """
         return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
     
-    def search(self, query:str, top_k=4) -> list[str]:
+    def search(self, query:str, top_k=5) -> list[str]:
         """Search the content based on the query.
 
         Args:
