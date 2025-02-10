@@ -2,6 +2,8 @@
 
 This project is a great starting point for anyone looking to understand the powerful Retrieval-Augmented Generation (RAG) architecture. It uses AI to retrieve relevant content from PDF documents and generate insightful answers with Google's Gemini model. It's a simple yet effective way to explore how RAG works. If you're interested in diving into the world of AI, give this project a try and start exploring the potential of RAG!
 
+![What is RAG? ](https://github.com/amitgiri-13/Intelligent-Retriever/blob/main/ReadingResources/rag_notes.pdf)
+
 ## Preview
 ![image](https://github.com/user-attachments/assets/67fbbc3b-0a3d-4129-9bb6-de3a545a2a9a)
 
