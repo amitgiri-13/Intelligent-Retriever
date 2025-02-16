@@ -32,7 +32,7 @@ class VectorStore:
             top_k (int, optional): Number of top matches to look for.
 
         Returns:
-            list: Returns top matched text contents.
+            list: Returns top_k matched text contents.
         """
 
         distances, indices = self.index.search(np.array([query_vector]), top_k)

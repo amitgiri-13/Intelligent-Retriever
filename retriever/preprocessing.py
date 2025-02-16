@@ -7,7 +7,7 @@ def read_pdf(file_path: str) -> str:
         file_path (str): Path of pdf file we want to read from.
 
     Returns:
-        str:  Text contents of the pdf file.
+        str: Raw text contents of the pdf file.
     """
     reader = PdfReader(file_path)
     text = ""
@@ -16,7 +16,7 @@ def read_pdf(file_path: str) -> str:
     return text
 
 def preprocess_text(text: str) -> str:
-    """Pre process the given text string. Removes the multiple spaces, strip and convert to lowercase.
+    """Preprocess the given text string. Removes the multiple spaces, strip and convert to lowercase.
     Args:
         text (str): Raw text contents.
 
