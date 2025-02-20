@@ -27,7 +27,7 @@ class Retriever:
         embeddings = self.model.encode(chunks)
         self.vector_store.add_vectors(embeddings, chunks)
 
-    def split_into_chunks(self, text: str, chunk_size=200) ->list[str]:
+    def split_into_chunks(self, text: str, chunk_size=100) ->list[str]:
         """Split the text into chunks.
 
         Args:

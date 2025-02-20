@@ -4,3 +4,6 @@ faiss-cpu
 PyPDF2
 PyYAML
 numpy
+streamlit
+python-dotenv
+google-generativeai

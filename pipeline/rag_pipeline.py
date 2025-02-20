@@ -15,7 +15,7 @@ class RAGPipeline:
         self.retriever = Retriever(retriever_model)
         self.generator = Generator(generator_model)
 
-    def run(self, query:str, file_path:str, top_k=4) -> str:
+    def run(self, query:str, file_path:str, top_k=2) -> str:
         """Returns the response based on query and content of given file using llm.
 
         Args:
@@ -26,6 +26,7 @@ class RAGPipeline:
         Returns:
             str: Response from the generator. 
         """
+       
         self.retriever.index_documents(file_path)
         context = self.retriever.search(query, top_k)
         prompt = create_prompt(query, context)
